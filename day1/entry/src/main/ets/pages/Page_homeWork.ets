@@ -52,6 +52,17 @@ let mulPrice3 = (shoeNum:number,shoePrice:number,colthNum:number,clothPrice:numb
   let result:number=shoeNum*shoePrice+colthNum*clothPrice
   return result
 }
+// 函数递归
+let mulPrice4 = (shoeNum:number,shoePrice:number,result1:number)=>{
+  let result:number = shoeNum*shoePrice
+  let mulPrice5=(colthNum:number,clothPrice:number,result:number)=>{
+    let reuslt1:number =colthNum*clothPrice
+    return reuslt1
+  }
+  return result
+}
+
+
 console.log('两种商品的总价是',mulPrice3(372,5,450,2))
 // 作业4
 interface Car{
