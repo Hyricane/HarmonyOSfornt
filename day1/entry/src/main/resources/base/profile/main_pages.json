@@ -3,6 +3,8 @@
     "pages/Index",
     "pages/Page_data",
     "pages/Page_array",
-    "pages/Page_function"
+    "pages/Page_function",
+    "pages/Page_arrow_function",
+    "pages/Page_object"
   ]
 }
