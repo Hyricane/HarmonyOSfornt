@@ -8,7 +8,15 @@ interface person{
   nationality: string,
   hobby:string[],
   education:string,
-  workYear:number
+  workYear:number,
+  // 定义对象行为
+  // 返回值为空
+  // 写在接口中的行为实际就是箭头函数，但普通的箭头函数语法略有不同
+  // 函数名:(形参)=>返回值类型
+  eat:()=>void,
+  // 返回值为数字
+  walk:()=>number
+  getSum:(a:number,b:number)=>number
 }
 // 实现接口
 // 为上面定义的接口赋予具体的数值,赋值后称为一个确切的对象
@@ -20,22 +28,35 @@ let zhangsan:person={
   hobby:['唱', '跳','rap','篮球'],
   education: '初中',
   nationality:'汉',
-  workYear: 1
-
+  workYear: 1,
+  // 接口中行为的实现
+  // 函数名(形参)=>{函数体}
+  eat:()=>{
+    console.log('吃饭')
+  },
+  walk:()=>{
+    console.log('走了')
+    return 1000
+  },
+  getSum:(a:number,b:number)=>{
+    let result:number = a+b
+    return result
+  }
 }
 console.log('张三的爱好是',zhangsan.hobby);
+console.log('张三计算的结果是',zhangsan.getSum(10,20))
 
 // 需求:定义另一个对象,并取出第二个爱好属性
-let lisi: person = {
-  name: '李四',
-  age: 20,
-  gender: '女',
-  hobby: ['跳舞', '唱', '篮球', '读书'],
-  education: '高中',
-  nationality: '汉',
-  workYear: 3
-}
-console.log('李四的爱好是', lisi.hobby[1]);
+// let lisi: person = {
+//   name: '李四',
+//   age: 20,
+//   gender: '女',
+//   hobby: ['跳舞', '唱', '篮球', '读书'],
+//   education: '高中',
+//   nationality: '汉',
+//   workYear: 3
+// }
+// console.log('李四的爱好是', lisi.hobby[1]);
 
 // 需求:定义一个名为car的接口,用小米su7实现
 interface car{
@@ -70,7 +91,6 @@ let Cat:Animal = {
   price: 100,
   isSterilization: true
 }
-
 
 @Entry
 @Component
