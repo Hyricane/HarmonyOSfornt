@@ -2,7 +2,11 @@
 // 使用let关键字为多个类型相同的数据设置数组
 // let 数组名: 类型[] = [值1,值2,值3,...]
 let names: string[] =['数据1','数据2','数据3']
-
+// 数组的索引
+// 通过索引来单独取出数组中的某一个数据，注意，数组中的索引从0开始
+console.log(names[0])
+console.log(names[1])
+console.log(names[2])
 @Entry
 @Component
 struct Page_array {
