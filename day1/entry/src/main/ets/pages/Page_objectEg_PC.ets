@@ -6,20 +6,21 @@ interface PC{
   playVideo:(videoName:string)=>void,
   playGame:(gameName:string)=>void,
 }
+
 let HuaWeiPc:PC={
   color:'grey',
   brand:'HuaWei',
   price:3000,
   weight:1,
   playVideo:(videoName:string)=>{
-    console.log('播放视频')
+    console.log('播放视频',videoName)
   },
   playGame:(gameName:string)=>{
-    console.log('玩游戏')
+    console.log('玩游戏',gameName)
   }
 }
-console.log('你的PC正在播放视频',HuaWeiPc.playVideo('动物世界'));
-console.log('你的PC正在运行游戏',HuaWeiPc.playGame('怪物猎人'))
+HuaWeiPc.playVideo('怪物猎人')
+
 
 @Entry
 @Component
