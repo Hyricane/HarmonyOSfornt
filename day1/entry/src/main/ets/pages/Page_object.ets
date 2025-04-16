@@ -47,16 +47,28 @@ console.log('张三的爱好是',zhangsan.hobby);
 console.log('张三计算的结果是',zhangsan.getSum(10,20))
 
 // 需求:定义另一个对象,并取出第二个爱好属性
-// let lisi: person = {
-//   name: '李四',
-//   age: 20,
-//   gender: '女',
-//   hobby: ['跳舞', '唱', '篮球', '读书'],
-//   education: '高中',
-//   nationality: '汉',
-//   workYear: 3
-// }
-// console.log('李四的爱好是', lisi.hobby[1]);
+let lisi: person = {
+  name: '李四',
+  age: 20,
+  gender: '女',
+  hobby: ['跳舞', '唱', '篮球', '读书'],
+  education: '高中',
+  nationality: '汉',
+  workYear: 3,
+  eat:()=>{
+    console.log('吃了汉堡')
+  },
+  walk:()=>{
+    console.log('走路')
+    return 1000
+  },
+  getSum:(a:number,b:number)=>{
+    let result:number = a+b
+    return result
+  }
+}
+console.log('李四的爱好是', lisi.hobby[1]);
+
 
 // 需求:定义一个名为car的接口,用小米su7实现
 interface car{
