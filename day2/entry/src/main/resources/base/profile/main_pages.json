@@ -1,5 +1,7 @@
 {
   "src": [
-    "pages/Index"
+    "pages/Index",
+    "pages/Page_Preview_Enum",
+    "pages/Page_Preview_UnionType"
   ]
 }
