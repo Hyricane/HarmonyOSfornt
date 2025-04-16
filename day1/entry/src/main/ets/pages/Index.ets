@@ -1,5 +1,7 @@
 // 打印日志
-console.log('标题','内容')
+console.log('消息的说明','内容')
+// 添加注释 ctrl+/
+
 
 @Entry
 @Component
