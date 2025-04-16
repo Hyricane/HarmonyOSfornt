@@ -8,6 +8,18 @@ let getRes = (a:number,b:number) => {
 let result = getRes(10,20)
 console.log('结果是',result)
 
+// 需求:计算一日三餐总花销
+let getCost = (morning:number,noon:number,night:number) =>{
+  let cost = morning+noon+night
+  return cost
+}
+console.log("今日总花销是",getCost(10,20,30))
+
+// function getCost(morning:number,noon:number,night:number){
+//   let cost = morning+noon+night
+//   return cost
+// }
+// console.log('花销是',getCost(10,20,30))
 
 @Entry
 @Component
