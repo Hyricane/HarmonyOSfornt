@@ -11,6 +11,7 @@
     "pages/Page_Image",
     "pages/Page_Eg_BaiduNovel",
     "pages/Page_Task_EnumAndUnType",
-    "pages/Page_Task2_UniType"
+    "pages/Page_Task2_UniType",
+    "pages/Page_Task3_Enum"
   ]
 }
