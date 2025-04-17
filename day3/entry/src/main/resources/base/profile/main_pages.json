@@ -1,5 +1,7 @@
 {
   "src": [
-    "pages/Index"
+    "pages/Index",
+    "pages/Page_Preview_ImgArrtribute",
+    "pages/Page_Eg_Preview_ImgArrtribute_"
   ]
 }
