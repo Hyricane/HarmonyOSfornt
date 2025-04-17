@@ -5,6 +5,12 @@
     "pages/Page_Preview_UnionType",
     "pages/Page_UnionType",
     "pages/Page_Enum",
-    "pages/Page_Commonpent"
+    "pages/Page_Component",
+    "pages/Page_Component_Eg_NovelDesc",
+    "pages/Page_TextAttribute",
+    "pages/Page_Image",
+    "pages/Page_Eg_BaiduNovel",
+    "pages/Page_Task_EnumAndUnType",
+    "pages/Page_Task2_UniType"
   ]
 }
