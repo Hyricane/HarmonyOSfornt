@@ -2,6 +2,9 @@
   "src": [
     "pages/Index",
     "pages/Page_Preview_Enum",
-    "pages/Page_Preview_UnionType"
+    "pages/Page_Preview_UnionType",
+    "pages/Page_UnionType",
+    "pages/Page_Enum",
+    "pages/Page_Commonpent"
   ]
 }
