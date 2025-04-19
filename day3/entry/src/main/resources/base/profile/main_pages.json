@@ -2,6 +2,13 @@
   "src": [
     "pages/Index",
     "pages/Page_Preview_ImgArrtribute",
-    "pages/Page_Eg_Preview_ImgArrtribute_"
+    "pages/Page_Eg_Preview_ImgArrtribute_",
+    "pages/Page_Preview_Icon",
+    "pages/Page_Preview_Layout",
+    "pages/Page_Eg_Layout_Login",
+    "pages/Page_Preview_Border",
+    "pages/Page_Eg_Preview_Goods",
+    "pages/Page_Preview_Backgroud",
+    "pages/Page_Eg_Preview_HwCard"
   ]
 }
