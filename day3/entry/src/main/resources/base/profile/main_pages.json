@@ -9,6 +9,11 @@
     "pages/Page_Preview_Border",
     "pages/Page_Eg_Preview_Goods",
     "pages/Page_Preview_Backgroud",
-    "pages/Page_Eg_Preview_HwCard"
+    "pages/Page_Eg_Preview_HwCard",
+    "pages/Page_AltImg",
+    "pages/Page_ImgFit",
+    "pages/Pag_Eg_ImgFit",
+    "pages/Page_Icon",
+    "pages/Page_BoxModel"
   ]
 }
