@@ -14,6 +14,13 @@
     "pages/Page_ImgFit",
     "pages/Pag_Eg_ImgFit",
     "pages/Page_Icon",
-    "pages/Page_BoxModel"
+    "pages/Page_BoxModel",
+    "pages/Pag_Eg_QQMusicLogin",
+    "pages/Page_Eg_Goods",
+    "pages/Page_BackgroundImg",
+    "pages/Page_Eg_HwCard",
+    "pages/Page_Gradient",
+    "pages/Page_BoxShadow",
+    "pages/Page_Eg_PhoneCard"
   ]
 }
