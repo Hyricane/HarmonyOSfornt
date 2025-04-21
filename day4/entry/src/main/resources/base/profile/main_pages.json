@@ -1,0 +1,12 @@
+{
+  "src": [
+    "pages/Index",
+    "pages/Page_Space",
+    "pages/Page_FlexAlign",
+    "pages/Page_Eg_DewuCard",
+    "pages/Page_LayoutWeight",
+    "pages/Page_Eg_LayoutWeight",
+    "pages/Page_Flex",
+    "pages/Page_Eg_Flex"
+  ]
+}

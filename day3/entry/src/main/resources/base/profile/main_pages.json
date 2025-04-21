@@ -21,6 +21,7 @@
     "pages/Page_Eg_HwCard",
     "pages/Page_Gradient",
     "pages/Page_BoxShadow",
-    "pages/Page_Eg_PhoneCard"
+    "pages/Page_Eg_PhoneCard",
+    "pages/Page_Task_Card"
   ]
 }

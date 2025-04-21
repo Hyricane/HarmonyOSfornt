@@ -1,0 +1,57 @@
+@Entry
+@Component
+struct Page_Eg_DewuCard {
+  @State message: string = 'Hello World';
+
+  build() {
+    Column(){
+      Column({space:20}){
+        Image($r('app.media.Eg_Dewu'))
+          .width('100%')
+          .aspectRatio(1)
+          .borderRadius({
+            topLeft:10,
+            topRight:10
+          })
+        Column({space:20}){
+          Text('今晚吃这个|每日艺术分享')
+            .fontWeight(FontWeight.Bold)
+            .fontSize(25)
+          Text('No.43')
+            .fontWeight(FontWeight.Bold)
+            .fontSize(25)
+          Row(){
+            Row({space:5}){
+              Image($r('app.media.startIcon'))
+                .width(20)
+                .borderRadius(10)
+              Text('插画师分享聚集地')
+            }
+            Row({space:5}){
+              Image($r('sys.media.ohos_ic_public_flight'))
+                .width(16)
+                .height(16)
+              Text('2300')
+            }
+          }
+          .width('100%')
+          .justifyContent(FlexAlign.SpaceBetween)
+        }
+        .width('100%')
+        .alignItems(HorizontalAlign.Start)
+        .padding(15)
+      }
+      .backgroundColor('#fff')
+      .padding(2)
+      .width('100%')
+      .shadow({
+        offsetX:10,
+        offsetY:10,
+        radius:10
+      })
+    }
+    .width('100%')
+    .height('100%')
+    .backgroundColor("#ccc")
+  }
+}
