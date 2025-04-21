@@ -1,0 +1,42 @@
+@Entry
+@Component
+struct Page_Task_News {
+  build() {
+    Column(){
+      // 主体
+      Flex({
+        direction:FlexDirection.Column,
+        justifyContent:FlexAlign.SpaceEvenly
+      }){
+        Text('《认知觉醒》：我敢打赌，凡是买了一堆书没读，报了一堆课没上，心中有无数欲望的人................')
+          .maxLines(2)
+          .textOverflow({
+            overflow:TextOverflow.Ellipsis
+          })
+          .lineHeight(26)
+        Image($r('app.media.Eg_news'))
+          .height(150)
+          .border({radius:5})
+        Row(){
+          Row({space:10}){
+            Text('阅读10万+')
+              .fontColor('#ECBE94')
+              .fontSize(14)
+            Text('普一的心理话')
+              .fontColor('#ccc')
+              .fontSize(14)
+          }
+          Image($r('sys.media.ohos_ic_public_close'))
+            .width(15)
+            .aspectRatio(1)
+        }
+        .width('100%')
+        .justifyContent(FlexAlign.SpaceBetween)
+      }
+      .height(300)
+      .padding(20)
+    }
+    .width('100%')
+    .height('100%')
+  }
+}

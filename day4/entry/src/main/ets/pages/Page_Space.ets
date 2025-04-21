@@ -5,6 +5,7 @@ struct Page_Space {
 
   build() {
     Column(){
+      // 间距
       // space设置布局主方向上元素间距等距
       // 容器({space:数值})
       Column({space:20}){

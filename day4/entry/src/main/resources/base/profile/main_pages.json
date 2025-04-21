@@ -7,6 +7,17 @@
     "pages/Page_LayoutWeight",
     "pages/Page_Eg_LayoutWeight",
     "pages/Page_Flex",
-    "pages/Page_Eg_Flex"
+    "pages/Page_Eg_Flex",
+    "pages/Page_Eg_GoodsCards",
+    "pages/Page_Task_WechatTab",
+    "pages/Page_Task_TikTokAside",
+    "pages/Page_Task_MineDesc",
+    "pages/Page_Task_WeChatPay",
+    "pages/Page_Task_Advertise",
+    "pages/Page_Task_VideoCourse",
+    "pages/Page_Task_News",
+    "pages/Page_Task_HwLogin",
+    "pages/Page_Task_JDLogin",
+    "pages/Page_Task_Alipay"
   ]
 }

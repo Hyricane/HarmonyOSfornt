@@ -8,6 +8,7 @@ struct Page_LayoutWeight {
       Row(){
         Text('测试文本')
           .backgroundColor(Color.Orange)
+            // 自适应缩放
             // 对子容器设置在父容器主轴方向剩余宽度比
           // .layoutWeight(数值)
           .layoutWeight(1)
