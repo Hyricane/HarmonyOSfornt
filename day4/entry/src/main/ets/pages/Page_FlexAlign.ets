@@ -5,6 +5,20 @@ struct Page_FlexAlign {
 
   build() {
     Column(){
+      Column(){
+        Text('测试文本')
+          .backgroundColor(Color.Pink)
+            // 单个元素设置侧轴对齐
+          .alignSelf(ItemAlign.End)
+        Text('测试文本')
+          .backgroundColor(Color.Pink)
+
+        Text('测试文本')
+          .backgroundColor(Color.Pink)
+      }
+      .backgroundColor('#ccc')
+      .height(300)
+      .width('100%')
       Row(){
         Text('测试文本')
           .backgroundColor(Color.Pink)
@@ -15,7 +29,7 @@ struct Page_FlexAlign {
           // 基线对齐
           .alignSelf(ItemAlign.Baseline)
           // 拉伸
-          .alignSelf(ItemAlign.Stretch)
+          // .alignSelf(ItemAlign.Stretch)
         Text('测试文本')
           .backgroundColor(Color.Pink)
 
