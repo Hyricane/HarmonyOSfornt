@@ -1,0 +1,68 @@
+@Entry
+@Component
+struct Page_Demo_StateStyle {
+  @State message: string = 'Hello World';
+
+  build() {
+    Column(){
+      Column(){
+        Image($r('app.media.Demo_StateStyle'))
+          .width('100%')
+          .borderRadius(10)
+        Text('看到游本昌年轻时候，终于知道他为啥看见胡歌眼泛泪光zsbfzsbfzsbfzsbfzsbfzsbfzsbfzsbfzsbf')
+          .maxLines(2)
+          .textOverflow({
+            overflow:TextOverflow.Ellipsis
+          })
+          .lineHeight(20)
+          .margin({
+           top:15,
+            bottom:15
+          })
+        Row({space:20}){
+          Row({space:5}){
+            Image($r('app.media.startIcon'))
+              .width(25)
+              .aspectRatio(1)
+            Text('娱小鱼')
+              .fontSize(20)
+          }
+          Row({space:5}){
+            Image($r('sys.media.ohos_ic_public_device_watch'))
+              .width(25)
+              .aspectRatio(1)
+            Text('6万')
+          }
+        }
+        .justifyContent(FlexAlign.SpaceBetween)
+        .width('100%')
+        .margin({
+          bottom:15
+        })
+      }
+      .padding(5)
+      .borderRadius(10)
+      .width('50%')
+      .shadow({
+        offsetX:3,
+        offsetY:3,
+        radius:5
+      })
+      .scale({
+        x:1,
+        y:1,
+      })
+      .stateStyles({
+        pressed:{
+          .scale({
+            x:1.01,
+            y:1.01,
+          })
+        }
+      })
+      .animation({duration:300})
+    }
+    .width('100%')
+    .height('100%')
+  }
+}

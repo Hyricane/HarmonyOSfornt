@@ -1,6 +1,13 @@
 {
   "src": [
     "pages/Index",
-    "pages/Page_Position"
+    "pages/Page_Position",
+    "pages/Page_Offset",
+    "pages/Page_Demo_Postion",
+    "pages/Page_ZIndex",
+    "pages/Page_Stack",
+    "pages/Page_Demo_Stack",
+    "pages/Page_StateStyle",
+    "pages/Page_Demo_StateStyle"
   ]
 }
