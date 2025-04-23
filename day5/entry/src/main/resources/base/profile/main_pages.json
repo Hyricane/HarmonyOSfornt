@@ -8,6 +8,10 @@
     "pages/Page_Stack",
     "pages/Page_Demo_Stack",
     "pages/Page_StateStyle",
-    "pages/Page_Demo_StateStyle"
+    "pages/Page_Demo_StateStyle",
+    "pages/Page_Task_GaussDB",
+    "pages/Page_Task_WYMusic",
+    "pages/Page_Task_QQMusic",
+    "pages/Page_Task_Meituan"
   ]
 }
