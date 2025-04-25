@@ -1,0 +1,62 @@
+@Entry
+@Component
+struct Page_Task_Subscribe {
+  @State sub:string = '+ 关注'
+  build() {
+   Column(){
+     Row(){
+       Row({space:10}){
+         Image($r('sys.media.ohos_ic_public_arrow_left'))
+           .width(20)
+           .height(30)
+           .fillColor('#fff')
+         Row({space:5}){
+           Image($r('app.media.day06_avatar'))
+             .width(24)
+             .aspectRatio(1)
+             .borderRadius(12)
+           Text('大V在现场')
+             .fontColor('#fff')
+           Text(this.sub)
+             .fontColor('#fff')
+             .textAlign(TextAlign.Center)
+             .height(24)
+             .aspectRatio(3)
+             .backgroundColor('#f92b13')
+             .borderRadius(12)
+             .onClick(()=>{
+               this.sub = '已关注'
+             })
+         }
+         .padding(2)
+         .backgroundColor('#202020')
+         .height(30)
+         .borderRadius(15)
+
+       }
+       Row({space:5}){
+         Image($r('app.media.day06_ic_ball'))
+           .width(20)
+           .aspectRatio(1)
+         Text('更多直播')
+           .fontSize(14)
+           .fontColor('#fff')
+       }
+       .backgroundColor('#1c1c1c')
+       .height(27)
+       .padding({left:5,right:10})
+       .borderRadius({
+         topLeft:13,
+         bottomLeft:13
+       })
+     }
+     .justifyContent(FlexAlign.SpaceBetween)
+     .width('100%')
+     .height(60)
+     .padding({left:20})
+     .backgroundColor('#2e2e2e')
+   }
+   .width('100%')
+   .height('100%')
+  }
+}
