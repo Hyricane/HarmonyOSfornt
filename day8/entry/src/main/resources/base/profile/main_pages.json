@@ -1,5 +1,7 @@
 {
   "src": [
-    "pages/Index"
+    "pages/Index",
+    "pages/Page_Preview_If",
+    "pages/Page_Preview_Demo_If"
   ]
 }
