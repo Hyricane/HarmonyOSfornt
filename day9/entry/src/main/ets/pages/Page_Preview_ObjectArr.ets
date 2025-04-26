@@ -16,6 +16,10 @@ let objArr : Person[] = [
 // 通过数组索引调用
 objArr[2].sleep(10)
 
+// 通过for循环取出
+for(let objItem of objArr){
+  console.log('姓名是'+objItem.name)
+}
 @Entry
 @Component
 struct Page_Preview_ObjectArr {
