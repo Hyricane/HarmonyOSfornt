@@ -1,0 +1,82 @@
+@Entry
+@Component
+struct Page_Preview_Demo_ConditionRendering {
+  @State stor : number = 1
+
+  build() {
+    Column(){
+        if (this.stor < 1){
+          Row(){
+            Row(){
+              Image($r('sys.media.ohos_ic_public_voice'))
+                .fillColor('#C7936F')
+                .width(15)
+                .aspectRatio(1)
+              Text('该商品暂时没有库存，看看相似商品吧')
+                .fontColor('#C7936F')
+            }
+            Image($r('sys.media.ohos_ic_public_arrow_up'))
+              .fillColor('#C7936F')
+              .width(12)
+              .aspectRatio(1)
+              .backgroundColor('#E0DFC4')
+              .borderRadius(6)
+          }
+          .justifyContent(FlexAlign.SpaceBetween)
+          .padding({left:20,right:20})
+          .height(40)
+          .width('100%')
+          .backgroundColor('#FCF8D9')
+        }
+      Row(){
+        Row(){
+          Column(){
+            Image($r('sys.media.textformat_size_square_fill'))
+              .fillColor('#ccc')
+              .width(30)
+              .aspectRatio(1)
+            Text('店铺')
+              .fontSize(12)
+          }
+          Column(){
+            Image($r('sys.media.return_home_fill'))
+              .fillColor('#ccc')
+              .width(30)
+              .aspectRatio(1)
+            Text('客服')
+              .fontSize(12)
+          }
+          Column(){
+            Image($r('sys.media.car_fill'))
+              .fillColor('#ccc')
+              .width(30)
+              .aspectRatio(1)
+            Text('购物车')
+              .fontSize(12)
+          }
+        }
+        .justifyContent(FlexAlign.SpaceBetween)
+        .margin({right:20})
+        .layoutWeight(1)
+        Row({space:5}){
+          if (this.stor>=1){
+            Button('加入购物车')
+              .fontSize(14)
+              .backgroundColor('#FFCC00')
+            Button('立即购买')
+              .backgroundColor('#F92D1B')
+              .fontSize(14)
+          }else{
+            Button('查看类似商品')
+              .backgroundColor('#FFCC00')
+              .fontSize(14)
+          }
+        }
+      }
+      .width('100%')
+      .padding({left:20,right:10})
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
