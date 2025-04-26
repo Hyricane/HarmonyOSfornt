@@ -1,6 +1,23 @@
 {
   "src": [
     "pages/Index",
-    "pages/Page_Preview_StrSum"
+    "pages/Page_Preview_StrSum",
+    "pages/Page_Preview_TypeTrans",
+    "pages/Page_Preview_StateManage",
+    "pages/Page_Preview_Click",
+    "pages/Page_Preview_Demo_Click",
+    "pages/Page_StrSum",
+    "pages/Page_TypeTrans",
+    "pages/Page_StateManage",
+    "pages/Page_onClick",
+    "pages/Page_Demo_onClick",
+    "pages/Page_MathOpreater",
+    "pages/Page_Demo_MathOpreator",
+    "pages/Page_AddSelf",
+    "pages/Page_LogiOperator",
+    "pages/Page_Demo_Cart",
+    "pages/Page_arr",
+    "pages/Page_Task_Sum",
+    "pages/Page_Task_Subscribe"
   ]
 }
