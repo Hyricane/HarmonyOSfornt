@@ -2,6 +2,16 @@
   "src": [
     "pages/Index",
     "pages/Page_Preview_If",
-    "pages/Page_Preview_Demo_If"
+    "pages/Page_Preview_Demo_If",
+    "pages/Page_Preview_Switch",
+    "pages/Page_Preview_TernaryOperator",
+    "pages/Page_Preview_Demo_TernaryOperator",
+    "pages/Page_Preview_ConditionRendering",
+    "pages/Page_Preview_Demo_ConditionRendering",
+    "pages/Page_Preview_While",
+    "pages/Page_Preview_Demo_WhileSum",
+    "pages/Page_Preview_For",
+    "pages/Page_Preview_ForArr",
+    "pages/Page_Preview_Demo_ArrSum"
   ]
 }
