@@ -21,6 +21,29 @@ if (score<100){
 }else {
   console.log('恭喜你考入黑马大学')
 }
+
+// 多分支
+// if (条件1){
+//   执行语句
+// }else if (条件2){
+//   执行语句
+// }else if (条件3){
+//   执行语句
+// }else {
+//   以上条件均不符合时执行
+// }
+
+if (score>=550){
+  console.log('优秀')
+}else if (score>=400){
+  console.log('一般')
+}else if (score>=300){
+  console.log('及格')
+}else {
+  console.log('不及格')
+}
+
+
 @Entry
 @Component
 struct Page_If {
