@@ -9,7 +9,7 @@ struct Page_ForEach {
       // 循环次数跟随数组长度
       // ForEach(数组名,(变量名:类型,索引:数字型)={函数体})
       ForEach(this.titles,(item:string,index:number)=>{
-        Text(item)
+        Text(`${index+1}.${item}`)
           .fontSize('24')
           .fontWeight(700)
           .fontColor(Color.Orange)
