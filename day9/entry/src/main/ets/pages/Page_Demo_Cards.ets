@@ -24,6 +24,9 @@ struct Page_Demo_Cards {
   @State imgN:number = 999
   // 中奖层遮罩
   @State bounsisVis : boolean = false
+  //代抽奖品
+  @State bounus : string[] = ['hw','pg','xm']
+  @State bounusCount : number = 0
   build() {
     Column() {
       // 一. 初始界面
@@ -63,6 +66,7 @@ struct Page_Demo_Cards {
               cardUrl:'app.media.img_0'+this.imgN,
               cardCount:this.cards[this.imgN].cardCount+1
             }
+            this.bounusCount = Math.floor(Math.random()*3)
           })
           .animation({
             duration: 1000
@@ -112,7 +116,7 @@ struct Page_Demo_Cards {
             .fontColor('#F5EBCF')
             .fontSize(25)
             .fontWeight(600)
-          Image($r('app.media.hw'))
+          Image($r(`app.media.${this.bounus[this.bounusCount]}`))
             .width(300)
           Button('再来一次')
             .width(200)
@@ -121,6 +125,15 @@ struct Page_Demo_Cards {
             .border({width: 2, color: '#FFF9E0'})
             .onClick(()=>{
               this.bounsisVis=false
+              this.cards = [
+                { cardUrl: 'app.media.bg_00', cardCount: 0},
+                { cardUrl: 'app.media.bg_01', cardCount: 0},
+                { cardUrl: 'app.media.bg_02', cardCount: 0},
+                { cardUrl: 'app.media.bg_03', cardCount: 0},
+                { cardUrl: 'app.media.bg_04', cardCount: 0},
+                { cardUrl: 'app.media.bg_05', cardCount: 0}
+
+              ]
             })
         }
         .width('100%')
