@@ -9,7 +9,7 @@
 //   default : 条件均不符合时执行
 //     执行语句
 // }
-// switch穿透,当有一个case符合时,会执行该case后的所有case,通过在每个case后添加break接触穿透效果
+// switch穿透,当有一个case符合时,会执行该case后的所有case,通过在每个case后添加break解除穿透效果
 
 let condition : string = '测试1'
 switch (condition){
