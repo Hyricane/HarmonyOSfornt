@@ -1,6 +1,9 @@
 {
   "src": [
     "pages/Index",
-    "pages/Page_Swiper"
+    "pages/Page_Swiper",
+    "pages/Page_Demo_Swiper_XiaoMi",
+    "pages/Page_Styles",
+    "pages/Page_Extend"
   ]
 }
