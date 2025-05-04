@@ -7,6 +7,7 @@ struct Page_RowColumnSum {
     Column(){
       Grid(){
         ForEach(this.gridArr,(item:number,index:number)=>{
+          // 使用if找到对应的盒子作为合并的起始
           if (index == 2) {
             GridItem(){
               Text(index.toString())

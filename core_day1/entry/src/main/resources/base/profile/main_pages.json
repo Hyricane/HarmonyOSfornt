@@ -4,6 +4,15 @@
     "pages/Page_Swiper",
     "pages/Page_Demo_Swiper_XiaoMi",
     "pages/Page_Styles",
-    "pages/Page_Extend"
+    "pages/Page_Extend",
+    "pages/Page_Builder",
+    "pages/Page_Grid",
+    "pages/Page_Demo_Taobao2thFloor",
+    "pages/Page_RowColumnSum",
+    "pages/Page_GridScroll",
+    "pages/Page_Demo_Scorll_Xiaomi",
+    "pages/Page_GridScrollBtn",
+    "pages/Page_GridScrollBar",
+    "pages/Page_Task_StudyHotDot"
   ]
 }
