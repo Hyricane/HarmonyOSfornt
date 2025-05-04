@@ -1,5 +1,15 @@
 {
   "src": [
-    "pages/Index"
+    "pages/Index",
+    "pages/Page_Preview_ObjectArr",
+    "pages/Page_Preview_ForEach",
+    "pages/Page_Preview_Demo_ForEach",
+    "pages/Page_ObjectArr",
+    "pages/Page_ForEach",
+    "pages/Page_Demo_ForEach",
+    "pages/Page_Math",
+    "pages/Page_Badge",
+    "pages/Page_Demo_Cards",
+    "pages/Page_Task_List"
   ]
 }
