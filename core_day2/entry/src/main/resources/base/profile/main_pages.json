@@ -1,6 +1,14 @@
 {
   "src": [
     "pages/Index",
-    "pages/Page_Scroll"
+    "pages/Page_Scroll",
+    "pages/Page_Demo_ScrollXiaomi",
+    "pages/Page_ScrollController",
+    "pages/Page_Demo_ScrollJD",
+    "pages/Page_Tabs",
+    "pages/Page_BuilderTabBar",
+    "pages/Page_BindSheet",
+    "pages/Page_Demo_BindSheet_Share",
+    "pages/Page_Task_StudyHotDot"
   ]
 }

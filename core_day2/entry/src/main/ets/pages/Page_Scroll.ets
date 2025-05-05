@@ -11,6 +11,7 @@ struct Page_Scroll {
       // Scroll 容器尺寸固定
       // scrollable 设置横向
       // 内容横向超出 Scroll 即可
+      //宽高会继承父盒子
       Scroll() {
         // 设置内容
         Column() {

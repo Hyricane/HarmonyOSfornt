@@ -21,6 +21,7 @@ struct ScrollController {
           colors:[['#0094ff',0],[Color.Orange,1]],
         })
       }
+      // 滚动事件
       .onWillScroll(()=>{
         console.log(this.scroll.currentOffset().yOffset.toString())
       })
