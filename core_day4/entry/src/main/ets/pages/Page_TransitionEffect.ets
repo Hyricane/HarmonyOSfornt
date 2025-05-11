@@ -2,7 +2,16 @@
 @Component
 struct Page_TransitionEffect {
   @State isShow : boolean = true
-  effect : object = TransitionEffect.OPACITY.animation({})
+  // 转场动画:
+  // 1.在struct外定义对象，类型为object
+  // 2.在对应的组件下通过.transition(对象名)
+
+  effect : object = TransitionEffect
+    .OPACITY.animation({})
+    // 使用combine联合多种效果
+    .combine(TransitionEffect.translate({x:10,y:20}))
+    .combine(TransitionEffect.rotate({angle:90}))
+    .combine(TransitionEffect.scale({x:10,y:10}))
 
   build() {
     Column(){

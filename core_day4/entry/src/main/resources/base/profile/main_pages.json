@@ -1,6 +1,8 @@
 {
   "src": [
     "pages/Index",
-    "pages/Page_TransitionEffect"
+    "pages/Page_TransitionEffect",
+    "pages/Page_RemainPram",
+    "pages/Page_ArrExtend"
   ]
 }
