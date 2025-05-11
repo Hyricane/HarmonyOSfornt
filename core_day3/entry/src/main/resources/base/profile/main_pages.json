@@ -1,6 +1,9 @@
 {
   "src": [
     "pages/Index",
-    "pages/Page_List"
+    "pages/Page_List",
+    "pages/Page_Demo_List_JDCateGroy",
+    "pages/Page_ListItemGroup",
+    "pages/Page_Demo_ListItemGroup"
   ]
 }

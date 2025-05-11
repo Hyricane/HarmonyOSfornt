@@ -17,7 +17,8 @@ interface List_Item{
 interface tabBar{
   text:string,
   badgeCount:number,
-  index:number
+  index:number,
+  builer:CustomBuilder
 }
 
 @Entry
@@ -51,10 +52,10 @@ struct Page_Task_StudyHotDot {
   ]
 
   tab_bar:tabBar[] = [
-    {text:'首页',index:0,badgeCount:0},
-    {text:'视频',index:1,badgeCount:0},
-    {text:'消息',index:2,badgeCount:0},
-    {text:'我的',index:3,badgeCount:0}
+    {text:'首页',index:0,badgeCount:0,builer:this.mainPageBulider},
+    {text:'视频',index:1,badgeCount:0,builer:this.videoBuilder},
+    {text:'消息',index:2,badgeCount:0,builer:this.videoBuilder},
+    {text:'我的',index:3,badgeCount:0,builer:this.videoBuilder}
   ]
 
   @State tab_index:number = 0
@@ -183,6 +184,11 @@ struct Page_Task_StudyHotDot {
         color: '#ccc'
       })
     }
+  }
+
+  @Builder
+  videoBuilder(){
+    Image($r('app.media.startIcon'))
   }
 
   build() {
