@@ -11,6 +11,8 @@
     "pages/Page_Demo_FnRec",
     "pages/Page_Math",
     "pages/Page_Date",
-    "pages/Page_Demo_Date"
+    "pages/Page_Demo_Date",
+    "pages/Page_Task_AD",
+    "pages/Page_Task_Dongchedi"
   ]
 }
