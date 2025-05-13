@@ -9,8 +9,8 @@ console.log(psMsg.padStart(10,'*'))
 let sStr :string= '1-2-3-4-5-6'
 console.log('',sStr.split('-'))
 
-//字符串去空格
-let soStr:string = '   测试  文 本   '
+//字符串去两端空格
+let soStr:string = '   测试文本   '
 console.log('去除前:',soStr)
 let soStr_1:string = soStr.trim()
 console.log('去除后:',soStr_1)
@@ -28,6 +28,11 @@ console.log(soStr1_2)
 let soStr2:string = '1234@163.com'
 console.log('是否包含@',soStr2.includes('@'))
 
+// 提取字符串
+// 字符串.slice(起始索引,结束索引)，区间左闭右开
+// 省略结束索引,从起始索引提取到最后
+let soStr3:string = '测试文本'
+console.log('提取前两个:',soStr3.slice(0,2))
 @Entry
 @Component
 struct Page_StrOpration {

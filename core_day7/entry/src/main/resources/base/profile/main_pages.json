@@ -1,6 +1,12 @@
 {
   "src": [
     "pages/Index",
-    "pages/Page_StrOpration"
+    "pages/Page_StrOpration",
+    "pages/Page_Demo_RankList",
+    "pages/Page_ArrOpration",
+    "pages/Page_Demo_Map_1",
+    "pages/Page_Demo_Map_2",
+    "pages/Page_Demo_Filter",
+    "pages/Page_Demo_Reduce"
   ]
 }
