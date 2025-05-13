@@ -7,6 +7,8 @@ struct Page_Task_Dongchedi {
     $r('app.media.ic_homework_nav03'),
     $r('app.media.ic_homework_nav04'),
     $r('app.media.ic_homework_nav05'),
+    $r('app.media.ic_homework_nav05'),
+    $r('app.media.ic_homework_nav05'),
   ]
 
   rankArr1:string[] = ['车系月销榜','车系周销榜','品牌月销榜','品牌周销榜']
@@ -48,6 +50,7 @@ struct Page_Task_Dongchedi {
                         .tabBar(this.thirdBar(item,index))
                       })
                     }
+                    .barMode(BarMode.Scrollable)
                     .onChange((index)=>{
                       this.thirdBarIndex = index
                       console.log(index.toString())
@@ -56,10 +59,16 @@ struct Page_Task_Dongchedi {
                   .tabBar(this.secondBar(item,index))
                 })
               }
+              .onChange((index)=>{
+                this.secondBarIndex = index
+                console.log(index.toString())
+              })
             }
               .tabBar(this.tabBarBuilder(item,index))
           })
         }
+        .fadingEdge(false)//删除渐隐效果
+        .barMode(BarMode.Scrollable)
         .onChange((index)=>{
           this.firstBarIndex = index
           console.log(index.toString())
@@ -81,8 +90,9 @@ struct Page_Task_Dongchedi {
       .height(50)
       .textAlign(TextAlign.Center)
       .fontSize(12)
-      .fontColor('#fff')
-      .linearGradient({ colors: [['#060B13', 0], ['#1B3D68', 1]] })
+      .borderRadius(this.secondBarIndex==index?10:0)
+      .fontColor(this.secondBarIndex==index?Color.Black:'#fff')
+      .linearGradient(this.secondBarIndex==index?{colors:[['#fff',1],['#fff',0]]}:{ colors: [['#060B13', 0], ['#1B3D68', 1]] })
 
   }
 
@@ -90,14 +100,16 @@ struct Page_Task_Dongchedi {
     Text(title)
       .padding({left:10,right:10})
       .height(40)
-      .backgroundColor(index==this.thirdBarIndex?'#fff':'#F5F7FB')
+      .backgroundColor(index==this.thirdBarIndex?Color.Orange:'#F5F7FB')
       .borderRadius(5)
+      .margin({right:10})
   }
 
   @Builder tabBarBuilder(imgUrl:ResourceStr,index:number){
     Image(imgUrl)
       .width(this.firstBarIndex==index?70:60)
       .height(this.firstBarIndex==index?50:40)
+      .margin({right:10})
   }
 
   @Builder
