@@ -2,7 +2,60 @@
 // 数组.indexOf(数组元素):number
 let numArr:number[] = [1,2,3,4,5]
 let strArr:string[] = ['1','2','3','4','5']
-console.log('3的索引是',numArr.indexOf(3))
+interface Champion_1 {
+  id: number
+  name: string
+  title: string
+}
+
+const championList_1: Champion_1[] = [
+  {
+    id: 116,
+    name: '阿轲',
+    title: '信念之刃',
+  },
+  {
+    id: 117,
+    name: '钟无艳',
+    title: '野蛮之锤',
+  },
+  {
+    id: 118,
+    name: '孙膑',
+    title: '逆流之时',
+  },
+  {
+    id: 119,
+    name: '扁鹊',
+    title: '善恶怪医',
+  },
+  {
+    id: 120,
+    name: '白起',
+    title: '最终兵器',
+  },
+  {
+    id: 121,
+    name: '芈月',
+    title: '永恒之月',
+  },
+  {
+    id: 123,
+    name: '吕布',
+    title: '无双之魔',
+  },
+  {
+    id: 132,
+    name: '马可波罗',
+    title: '远游之枪',
+  },
+  {
+    id: 133,
+    name: '狄仁杰',
+    title: '断案大师',
+  },
+]
+console.log('7dui的索引是',numArr.indexOf(7))
 console.log('字符串4的索引是',strArr.indexOf('4'))
 
 //查找数组中是否存在某元素
@@ -62,6 +115,34 @@ let arrReRes = numArr.reduce((sum,item)=>{
 },0)
 console.log(arrReRes.toString())
 
+// 查找数组元素下标
+// 数组.findIndex((元素,索引)=>{return 元素==值}):number
+// 若找到则返回索引,未找到返回-1
+let numArrIndex_find = numArr.findIndex((item,index)=>{
+  return item == 5
+})
+console.log(numArrIndex_find.toString())
+
+//在对象数组中根据某属性找到该对象
+// 对象数组.find((元素,索引)=>{return 元素.属性 == 值}):object
+let findRes = championList_1.find((item,index)=>{
+  return item.name = '孙膑'
+})
+console.log(JSON.stringify(findRes))
+
+// 检测数组所有元素是否都符合给定要求
+//数组.every((元素,索引)=>{return 判断逻辑}):boolean
+let everyRes = numArr.every((item,index)=>{
+  return item>0
+})
+console.log('是否全部大于0',everyRes)
+
+//检测数组是否存在符合给定要求的元素
+// 数组.some((元素,索引)=>{return 判断逻辑}):boolean
+let someRes = numArr.some((item,index)=>{
+  return item>3
+})
+console.log('是否存在大于3的元素',someRes)
 @Entry
 @Component
 struct Page_ArrOpration {
