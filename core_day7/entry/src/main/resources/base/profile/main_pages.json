@@ -9,6 +9,7 @@
     "pages/Page_Demo_Filter",
     "pages/Page_Demo_Reduce",
     "pages/Page_Demo_findIndex",
-    "pages/Page_Demo_Hero"
+    "pages/Page_Demo_Hero",
+    "pages/Page_Task_QiCheZhiJia"
   ]
 }
