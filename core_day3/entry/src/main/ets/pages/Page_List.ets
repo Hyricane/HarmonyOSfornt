@@ -19,6 +19,7 @@ struct Page_List {
           }
         })
       }
+      .sticky(StickyStyle.Header)
       // 主轴方向
       .listDirection(Axis.Vertical)
       // 滚动条属性 auto(默认),拖拽时显示,两秒后隐藏

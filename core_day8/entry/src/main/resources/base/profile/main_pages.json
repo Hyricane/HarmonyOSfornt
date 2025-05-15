@@ -1,0 +1,16 @@
+{
+  "src": [
+    "pages/Index",
+    "pages/Page__ConsicionFun",
+    "pages/Page_TextInput",
+    "pages/Page_Demo_Input",
+    "pages/Page_TextArea",
+    "pages/Page_CheckBox",
+    "pages/Page_Demo_XiaoMi",
+    "pages/Page_CheckGroup",
+    "pages/Page_Demo_Cart",
+    "pages/Page_RegExp",
+    "pages/Page_Replace",
+    "pages/Page_Demo_Login"
+  ]
+}
