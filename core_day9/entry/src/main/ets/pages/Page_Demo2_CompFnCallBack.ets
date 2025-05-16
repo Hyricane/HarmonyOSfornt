@@ -22,6 +22,7 @@ struct RowComp {
 
 @Component
 struct SearchComp {
+  //获取输入值
   @State searchContent_comp:string = ''
   searchFn=(search:string)=>{}
   build() {
@@ -35,7 +36,7 @@ struct SearchComp {
         .type(ButtonType.Normal)
         .borderRadius(10)
         .onClick(()=>{
-          if (this.searchContent_comp==''){return}
+          if (this.searchContent_comp.trim()==''){return}
           this.searchFn(this.searchContent_comp)
           this.searchContent_comp=''
         })
