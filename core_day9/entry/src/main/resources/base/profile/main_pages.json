@@ -5,6 +5,8 @@
     "pages/Page_Demo_XiaoMi",
     "pages/Page_ComponentFnCallBack",
     "pages/Page_Demo_CompFnCallBack",
-    "pages/Page_Demo2_CompFnCallBack"
+    "pages/Page_Demo2_CompFnCallBack",
+    "pages/Page_Prop",
+    "pages/Page_Demo_ZhiHuComment"
   ]
 }

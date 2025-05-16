@@ -10,7 +10,40 @@ interface ReplyItem {
   likeFlag: boolean
 }
 
+//底部发布
 @Component
+struct ReplyPublish {
+  @State replyContent:string = ''
+  repPubilis=(repContent:string)=>{}
+  build() {
+    Row() {
+      TextInput({ placeholder: '回复',text:$$this.replyContent})
+        .layoutWeight(1)
+        .backgroundColor("#f4f5f6")
+        .height(40)
+      Text('发布')
+        .fontColor("#6ecff0")
+        .fontSize(14)
+        .margin({
+          left: 10
+        })
+        .onClick(()=>{
+          if (this.replyContent.trim()=='') {
+            this.replyContent='发送内容不能为空'
+            return
+          }
+          this.repPubilis(this.replyContent)
+        })
+
+    }
+    .padding(10)
+    .backgroundColor(Color.White)
+    .border({
+      width: { top: 1 },
+      color: "#f4f5f6"
+    })
+  }
+}
 
 @Component
 struct ReplyList {
@@ -200,7 +233,7 @@ struct Page_Demo_ZhiHUComment {
           // 回复数
           Text() {
             Span('回复')
-            Span(`${27}`)
+            Span(`${this.replyList.length}`)
           }
           .padding(15)
           .fontWeight(700)
@@ -233,26 +266,20 @@ struct Page_Demo_ZhiHUComment {
       .layoutWeight(1)
 
       // 底部的发布评论区域
-      Row() {
-        TextInput({ placeholder: '回复' })
-          .layoutWeight(1)
-          .backgroundColor("#f4f5f6")
-          .height(40)
-        Text('发布')
-          .fontColor("#6ecff0")
-          .fontSize(14)
-          .margin({
-            left: 10
+      ReplyPublish({
+        repPubilis:(repContent:string)=>{
+          this.replyList.unshift({
+            id: Date.now(),
+            avatar: 'https://picx.zhimg.com/v2-5a3f5190369ae59c12bee33abfe0c5cc_xl.jpg?source=32738c0c',
+            author: 'New User',
+            content: repContent,
+            time: `${new Date().getMonth()+1}-${new Date().getDate()}`,
+            area: '上海',
+            likeNum: 0,
+            likeFlag: false
           })
-
-      }
-      .padding(10)
-      .backgroundColor(Color.White)
-      .border({
-        width: { top: 1 },
-        color: "#f4f5f6"
+        }
       })
-
     }
     .height('100%')
   }
