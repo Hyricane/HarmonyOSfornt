@@ -3,6 +3,8 @@
     "pages/Index",
     "pages/Page_Component",
     "pages/Page_Demo_XiaoMi",
-    "pages/Page_ComponentFnCallBack"
+    "pages/Page_ComponentFnCallBack",
+    "pages/Page_Demo_CompFnCallBack",
+    "pages/Page_Demo2_CompFnCallBack"
   ]
 }

@@ -1,6 +1,7 @@
 @Component
 struct TestComp {
   @State cfcMsg:string = ''
+  // 函数名=(参数)=>{}
   cfcFn=() => {
     AlertDialog.show({message:this.cfcMsg})
   }
