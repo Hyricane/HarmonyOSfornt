@@ -2,6 +2,7 @@
   "src": [
     "pages/Index",
     "pages/Page_Component",
-    "pages/Page_Demo_XiaoMi"
+    "pages/Page_Demo_XiaoMi",
+    "pages/Page_ComponentFnCallBack"
   ]
 }
