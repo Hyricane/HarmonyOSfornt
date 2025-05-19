@@ -1,8 +1,8 @@
 @Entry
 @Component
 struct Page_Task_Plane {
+  interId: number = 0
   @State planePosition:number[]=[0,0]
-  interId:number = 0
   build() {
     Stack({ alignContent: Alignment.Center }) {
       Image($r('app.media.ic_plane_01'))
@@ -13,20 +13,20 @@ struct Page_Task_Plane {
 
       // 控制器
       Column({ space: 2 }) {
-        Image($r('app.media.ic_public_arrow_up'))
+        Image($r('app.media.ic_public_arrow_up' +
+          ''))
           .width(40)
           .height(40)
           .border({ width: 1 })
-          .onTouch((event:TouchEvent)=>{
-            if (event.type==TouchType.Down) {
-              this.interId = setInterval(()=>{
-                this.planePosition[0]--
-              },10)
-            }else if (event.type==TouchType.Up){
-              clearInterval(this.interId)
-            }
-          })
-
+        .onTouch((event:TouchEvent)=>{
+          if (event.type==TouchType.Down) {
+            this.interId = setInterval(()=>{
+              this.planePosition[0]--
+            },10)
+          }else if (event.type==TouchType.Up){
+            clearInterval(this.interId)
+          }
+        })
         Row({ space: 48 }) {
           Image($r('app.media.ic_public_arrow_left'))
             .width(40)
