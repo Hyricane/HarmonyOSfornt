@@ -9,20 +9,43 @@ const DEEP_GRAY: string = '#bebebe'
 @Entry
 @Component
 struct Page_Demo_Cart {
-  @State
-  list: CartGood[] = goodList
+  @State list: CartGood[] = goodList
+  @State @Watch('calDataOfIds') selectIds:string[] = []
+  @Provide totalCount:number = 0
+  @Provide totalPrice:number = 0
+  calDataOfIds(){
+    let selectList = this.list.filter((item)=>{
+      if (this.selectIds.includes(item.good.id)) {
+        return true
+      }else{
+        return false
+      }
+    })
+    //商品总数
+    this.totalCount=selectList.reduce((sum,item)=>{
+      return sum +item.count
+    },0)
+    //总价格
+    this.totalPrice = selectList.reduce((sum,item)=>{
+      return sum+item.count*item.good.jdPrice
+    },0)
+  }
 
   build() {
     Column() {
       // 标题
-      TitleCom()
+      TitleCom({
+        cartList:this.list
+      })
       // 内容
       ContentCom({
         cartGoodList:this.list
       })
 
       // 支付
-      PayCom()
+      PayCom({
+        selectedIds_p:this.selectIds
+      })
     }
     .height('100%')
     .backgroundColor(LIGHT_GRAY)
@@ -32,7 +55,27 @@ struct Page_Demo_Cart {
 // 内容区域
 @Component
 struct ContentCom {
-  @Prop cartGoodList:CartGood[]
+  @Link cartGoodList:CartGood[]
+
+  @Builder
+  DelBuilder(id:string){
+    Text('删除')
+      .backgroundColor(Color.Red)
+      .fontColor('#fff')
+      .height('100%')
+      .width(60)
+      .textAlign(TextAlign.Center)
+      .onClick(()=>{
+        this.cartGoodList = this.cartGoodList.filter((item)=>{
+          if(item.id == id){
+            return false
+          }else{
+            return true
+          }
+        })
+        // this.cartGoodList.splice(index,1)
+      })
+  }
   build() {
     Scroll() {
       Column() {
@@ -50,7 +93,15 @@ struct ContentCom {
                   cartListItem:item
                 })
               }
-            })
+              .swipeAction({
+                end:this.DelBuilder(item.id)
+              })
+            },
+              // 生成键值对来实现结构复用
+            (item:CartGood,index:number)=>{
+              return item.id
+            }
+            )
           }
           .divider({ strokeWidth: .5, startMargin: 10, endMargin: 10, color: DEEP_GRAY })
         }
@@ -58,7 +109,9 @@ struct ContentCom {
         .margin({ left: 10, right: 10 })
 
         // 空车 商品为空时显示
-        EmptyCom()
+        if (this.cartGoodList.length==0){
+          EmptyCom()
+        }
       }
     }
     .align(Alignment.Top)
@@ -71,11 +124,13 @@ struct ContentCom {
 // 标题(显示商品种类)
 @Component
 struct TitleCom {
+  @Prop cartList:CartGood[]
+  @Consume totalCount:number
   build() {
     Row() {
       // 文字
       Stack({ alignContent: Alignment.Bottom }) {
-        Text(`购物车(10 )`)
+        Text(`购物车(${this.totalCount})`)
           .height('100%')
         Text('')
           .width(25)
@@ -114,80 +169,82 @@ struct TitleCom {
 struct FreightCom {
   // 默认 69 可以由外部传入
   minPrice: number = 69.00
-  totalPrice: number = 0
+  @Consume totalPrice:number
 
   build() {
     Column() {
-      // 运费不够 提示
-      Row() {
+      if (this.totalPrice>this.minPrice){
+        // 运费足够 提示
         Row({ space: 5 }) {
-          // 凑单免运费
-          Text() {
-            Span('凑单')
-            Span('免运费')
-              .fontColor(MAIN_RED)
-          }
-          .fontSize(13)
-          .fontFamily('medium')
-
-          // 分割线
+          Text('运费')
+            .backgroundColor(MAIN_RED)
+            .fontSize(12)
+            .fontColor(Color.White)
+            .padding(2)
+            .borderRadius(3)
           Divider()
             .vertical(true)
-            .height(8)
-            .color(DEEP_GRAY)
-            .strokeWidth(1)
+            .height(12)
+            .strokeWidth(2)
+          Text('已免运费')
+            .fontSize(12)
+            .fontColor(Color.Gray)
+          Image('/common/day08-10/yhd/ic_yhd_order_info.png')
+            .width(15)
 
-          // 运费信息
-          Row() {
+        }
+      }else {
+        // 运费不够 提示
+        Row() {
+          Row({ space: 5 }) {
+            // 凑单免运费
             Text() {
-              Span('还需凑钱 ')
-              Span(`¥${(this.minPrice - this.totalPrice).toFixed(2)}`)
+              Span('凑单')
+              Span('免运费')
                 .fontColor(MAIN_RED)
-              Span('可免运费')
             }
             .fontSize(13)
+            .fontFamily('medium')
 
-            Image($r('app.media.ic_yhd_order_info'))
-              .width(15)
+            // 分割线
+            Divider()
+              .vertical(true)
+              .height(8)
+              .color(DEEP_GRAY)
+              .strokeWidth(1)
+
+            // 运费信息
+            Row() {
+              Text() {
+                Span('还需凑钱 ')
+                Span(`¥${(this.minPrice - this.totalPrice).toFixed(2)}`)
+                  .fontColor(MAIN_RED)
+                Span('可免运费')
+              }
+              .fontSize(13)
+
+              Image($r('app.media.ic_yhd_order_info'))
+                .width(15)
+            }
+          }
+
+          // 按钮
+          Button() {
+            Row() {
+              Text('去凑单')
+                .fontColor(Color.White)
+                .fontSize(12)
+              Image($r('app.media.ic_public_arrow_right'))
+                .height(14)
+                .width(10)
+                .fillColor(Color.White)
+            }
+            .backgroundColor(MAIN_RED)
+            .borderRadius(20)
+            .padding({ left: 10, top: 3, bottom: 3, right: 2 })
           }
         }
-
-        // 按钮
-        Button() {
-          Row() {
-            Text('去凑单')
-              .fontColor(Color.White)
-              .fontSize(12)
-            Image($r('app.media.ic_public_arrow_right'))
-              .height(14)
-              .width(10)
-              .fillColor(Color.White)
-          }
-          .backgroundColor(MAIN_RED)
-          .borderRadius(20)
-          .padding({ left: 10, top: 3, bottom: 3, right: 2 })
-        }
-      }
-      .width('100%')
-
-      // 运费足够 提示
-      Row({ space: 5 }) {
-        Text('运费')
-          .backgroundColor(MAIN_RED)
-          .fontSize(12)
-          .fontColor(Color.White)
-          .padding(2)
-          .borderRadius(3)
-        Divider()
-          .vertical(true)
-          .height(12)
-          .strokeWidth(2)
-        Text('已免运费')
-          .fontSize(12)
-          .fontColor(Color.Gray)
-        Image('/common/day08-10/yhd/ic_yhd_order_info.png')
-          .width(15)
-
+        .width('100%')
       }
     }
     .borderRadius(5)
@@ -202,12 +259,18 @@ struct FreightCom {
 // 支付（最下方组件）
 @Component
 struct PayCom {
+  @Link selectedIds_p:string[]
+  @Consume totalPrice:number
+  @Consume totalCount:number
   build() {
     Row() {
       Row() {
         CheckboxGroup({
           group: 'cart'
         })
+          .onChange((obj)=>{
+            this.selectedIds_p = obj.name
+          })
           .selectedColor(MAIN_RED)
 
         Text('全选')
@@ -219,9 +282,9 @@ struct PayCom {
           .fontSize(14)
         PriceCom({
           fontColor: Color.Black,
-          price: 0
+          price: Number(this.totalPrice.toFixed(2))
         })
-        Button(`入会结算(0)`)
+        Button(`入会结算(${this.totalCount})`)
           .fontColor('#ffe3cc')
           .backgroundColor(Color.Black)
           .fontSize(14)
@@ -310,12 +373,13 @@ struct ListTitleCom {
 // 列表项：
 @Component
 struct GoodsListItem {
-  @Prop cartListItem:CartGood
+  @ObjectLink cartListItem:CartGood
   build() {
     Row({ space: 10 }) {
       // 左
       Checkbox({
-        group: 'cart'
+        group: 'cart',
+        name:this.cartListItem.id
       })
         .shape(CheckBoxShape.CIRCLE)
         .selectedColor(MAIN_RED)
@@ -358,7 +422,14 @@ struct GoodsListItem {
             Counter() {
               Text(this.cartListItem.count.toString())
             }
-
+            .enableDec(this.cartListItem.count>1)
+            .onInc(()=>{
+              this.cartListItem.count++
+              // console.log(this.cartListItem.count.toString())
+            })
+            .onDec(()=>{
+              this.cartListItem.count--
+            })
             .scale({ x: .8, y: .8 })
           }
           .justifyContent(FlexAlign.SpaceBetween)

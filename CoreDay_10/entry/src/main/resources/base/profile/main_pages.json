@@ -5,6 +5,7 @@
     "pages/Page_Link",
     "pages/Page_ProvideConsume",
     "pages/Page_Watch",
-    "pages/Page_Demo_Cart"
+    "pages/Page_Demo_Cart",
+    "pages/Page_Task"
   ]
 }
