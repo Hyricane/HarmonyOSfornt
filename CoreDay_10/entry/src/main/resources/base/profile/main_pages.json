@@ -1,6 +1,10 @@
 {
   "src": [
     "pages/Index",
-    "pages/Page_Observed"
+    "pages/Page_Observed",
+    "pages/Page_Link",
+    "pages/Page_ProvideConsume",
+    "pages/Page_Watch",
+    "pages/Page_Demo_Cart"
   ]
 }
