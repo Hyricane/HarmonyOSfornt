@@ -99,7 +99,6 @@ struct TopCom {
         Text(this.categoryTitle)
           .fontColor(Color.White)
           .fontSize(30)
-          // .sharedTransition(this.categoryTitle,{duration:500})
       }
       .justifyContent(FlexAlign.SpaceAround)
       .alignItems(HorizontalAlign.Start)

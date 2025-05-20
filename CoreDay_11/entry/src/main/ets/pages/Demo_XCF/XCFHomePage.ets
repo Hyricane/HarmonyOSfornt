@@ -46,7 +46,6 @@ struct ContentCom {
         ForEach(this.list, (item: CategoryContainer) => {
           Column({ space: 15 }) {
             Text(item.title)
-              // .sharedTransition(item.title,{duration:500})
               .fontSize(20)
               .alignSelf(ItemAlign.Start)
               .fontWeight(FontWeight.Medium)
