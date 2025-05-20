@@ -10,6 +10,11 @@
     "pages/Demo_XCF/XCFHomePage",
     "pages/Demo_XCF/XCFDetailPage",
     "pages/ShareTransition/Page_Share_1",
-    "pages/ShareTransition/Page_Share_2"
+    "pages/ShareTransition/Page_Share_2",
+    "pages/Page_Navigation",
+    "pages/life/Page_Life_1",
+    "pages/life/Page_Life_2",
+    "pages/Task/Page_01_Task",
+    "pages/Task/Page_02_Task"
   ]
 }
