@@ -1,3 +1,5 @@
+import { router } from '@kit.ArkUI';
+
 @Entry
 @Component
 struct Index {
@@ -15,7 +17,23 @@ struct Index {
         })
         .onClick(() => {
           this.message = 'Welcome';
+          router.back()
         })
+      Row(){
+        Button('清空页面栈')
+          .onClick(()=>{
+            router.clear()
+          })
+        Button('获取页面数量')
+          .onClick(()=>{
+            AlertDialog.show({message:router.getLength()})
+          })
+        Button('获取页面状态')
+          .onClick(()=>{
+            AlertDialog.show({message:JSON.stringify(router.getState())})
+          })
+      }
+      .width('100%')
     }
     .height('100%')
     .width('100%')

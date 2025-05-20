@@ -1,5 +1,15 @@
 {
   "src": [
-    "pages/Index"
+    "pages/Index",
+    "pages/Page_Router_Push_1",
+    "pages/Demo_DouBan/Page_Demo_Home",
+    "pages/Demo_DouBan/Page_Demo_Movie",
+    "pages/Demo_DouBan/Page_Demo_Actor",
+    "pages/Params/Page_setParams",
+    "pages/Params/Page_getParams",
+    "pages/Demo_XCF/XCFHomePage",
+    "pages/Demo_XCF/XCFDetailPage",
+    "pages/ShareTransition/Page_Share_1",
+    "pages/ShareTransition/Page_Share_2"
   ]
 }
