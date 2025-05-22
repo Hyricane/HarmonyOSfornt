@@ -1,5 +1,14 @@
 {
   "src": [
-    "pages/Index"
+    "pages/Index",
+    "pages/Page_Start",
+    "pages/LocalStroage/Page_LS_1",
+    "pages/LocalStroage/Page_LS_2",
+    "pages/AppStroage/Page_App_A",
+    "pages/AppStroage/Page_App_B",
+    "pages/bilibili/Page01_Home",
+    "pages/bilibili/Page02_Login",
+    "pages/Task/MyCenterPage",
+    "pages/Task/LoginPage"
   ]
 }

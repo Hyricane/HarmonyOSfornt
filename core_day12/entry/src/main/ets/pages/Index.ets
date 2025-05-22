@@ -1,3 +1,5 @@
+import { router } from '@kit.ArkUI';
+
 @Entry
 @Component
 struct Index {
@@ -15,6 +17,10 @@ struct Index {
         })
         .onClick(() => {
           this.message = 'Welcome';
+        })
+      Button('返回')
+        .onClick(()=>{
+          router.back()
         })
     }
     .height('100%')
