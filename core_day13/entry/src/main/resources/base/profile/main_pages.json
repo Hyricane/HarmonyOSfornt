@@ -5,6 +5,7 @@
     "pages/Pages_PersistentStorage/Page_P_B",
     "pages/Page_Environment",
     "pages/Bill/BillAddPage",
-    "pages/Bill/BillIndexPage"
+    "pages/Bill/BillIndexPage",
+    "pages/Task/Page01_homework_index"
   ]
 }
