@@ -6,7 +6,7 @@ PersistentStorage.persistProp('heroList',CQData.getHeroList())
 @Component
 struct Page01_homework_cq {
   // 筛选条件
-  @State selectedType: HeroType = '剑士'
+  @State selectedType: HeroType|null = null
   // 获取导航数据，不更改 不需要加@State
   navList: NavItem[] = CQData.getNavList()
   @StorageLink('heroList') heroList:Hero[]=[]
@@ -44,6 +44,9 @@ struct Page01_homework_cq {
         Row({ space: 20 }) {
           Image($r('app.media.ic_cq_logo'))
             .width(150)
+            .onClick(()=>{
+              this.selectedType=null
+            })
           Divider()
             .vertical(true)
             .height(50)
@@ -96,7 +99,7 @@ struct Page01_homework_cq {
           }
 
           // 基于选中的英雄 type 筛选出对应的数组，渲染到页面上
-          ForEach(this.heroList.filter((item)=>{return this.selectedType==item.type})
+          ForEach(this.selectedType==null?this.heroList:this.heroList.filter((item)=>{return this.selectedType==item.type})
             ,(item: Hero, index: number) => {
             // 列表项目
             ListItem() {
