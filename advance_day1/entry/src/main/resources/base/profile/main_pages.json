@@ -5,6 +5,9 @@
     "pages/Page_JSON",
     "pages/Page_Demo",
     "pages/Page_Demo_Joke",
-    "pages/Page_Demo_Url"
+    "pages/Page_Demo_Url",
+    "pages/Page_Post",
+    "pages/BookStore/homePage",
+    "pages/BookStore/addPage"
   ]
 }
