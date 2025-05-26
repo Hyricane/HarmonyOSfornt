@@ -4,6 +4,7 @@
     "pages/Page_request",
     "pages/Page_JSON",
     "pages/Page_Demo",
-    "pages/Page_Demo_Joke"
+    "pages/Page_Demo_Joke",
+    "pages/Page_Demo_Url"
   ]
 }

@@ -1,6 +1,6 @@
 import http from '@ohos.net.http'
 
-interface NewsResponse {
+export interface NewsResponse {
   message: string
   data: News[]
 }
