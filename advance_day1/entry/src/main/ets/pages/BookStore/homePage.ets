@@ -1,4 +1,4 @@
-import { router } from '@kit.ArkUI'
+import { promptAction, router } from '@kit.ArkUI'
 import { http } from '@kit.NetworkKit';
 
 export interface ApifoxModel {
@@ -107,7 +107,21 @@ struct homePage {
         .type(ButtonType.Normal)
         .backgroundColor('#da3231')
         .onClick(() => {
-          AlertDialog.show({ message: '点了删除' })
+          promptAction.showDialog({
+            title:'温馨提示',
+            message:'确实删除吗',
+            buttons:[{text:'确认',color:'#AA3F3C'},{text:'取消',color:'#000'}]
+          }).then((res)=>{
+            if (res.index==0) {
+              bookReq.request(`https://hmajax.itheima.net/api/books/${item.id}`,
+                {
+                  method:http.RequestMethod.DELETE
+                }).then((res)=>{
+                promptAction.showToast({message:(JSON.parse(res.result as string) as ApifoxModel).message})
+              })
+              this.onPageShow()
+            }
+          })
         })
         .height('100%')
     }
@@ -140,5 +154,13 @@ struct bookItem {
       .height(108)
       .alignItems(HorizontalAlign.Start)
     }
+    .onClick(()=>{
+      router.pushUrl({
+        url:'pages/BookStore/EditPage',
+        params:{
+          id:this.data.id
+        }
+      })
+    })
   }
 }

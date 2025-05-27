@@ -1,14 +1,34 @@
-import { http } from '@kit.NetworkKit'
-import { bookReq,creator,ApifoxModel} from './homePage'
 import { promptAction, router } from '@kit.ArkUI'
+import { bookReq,creator,ApifoxModel,Book} from './homePage'
+import http from '@ohos.net.http'
 
-const bookTitleRegex = /^[\u4E00-\u9FA5A-Za-z][\u4E00-\u9FA5A-Za-z0-9\s\-:,'"“”《》！？。,.!?()]\*$/;
+interface GetBookResponse {
+  message: string
+  data: Book
+}
+interface GetId{
+  id:number
+}
 @Entry
 @Component
-struct addPage {
+struct EditPage {
   @State bookname: string = ''
   @State author: string = ''
   @State publisher: string = ''
+  @State book_id: number | null = null
+
+  aboutToAppear(): void {
+    this.book_id = (router.getParams() as Book).id
+
+    bookReq.request(`https://hmajax.itheima.net/api/books/${this.book_id}`,
+      {method:http.RequestMethod.GET})
+      .then(res=>{
+        let obj = (JSON.parse(res.result as string) as GetBookResponse).data
+        this.bookname = obj.bookname
+        this.author = obj.author
+        this.publisher = obj.publisher
+      })
+  }
 
   build() {
     Navigation() {
@@ -60,33 +80,26 @@ struct addPage {
           .type(ButtonType.Normal)
           .borderRadius(10)
           .onClick(() => {
-            bookReq.request('https://hmajax.itheima.net/api/books',{
-              method:http.RequestMethod.POST,
+            bookReq.request(`https://hmajax.itheima.net/api/books/${this.book_id}`,{
+              method:http.RequestMethod.PUT,
+              header:{ContentType:'application/json'},
               extraData:{
                 bookname:this.bookname,
                 author:this.author,
                 publisher:this.publisher,
                 creator:creator
-              },
-              header: { ContentType: 'application/json' }
-            }).then((res)=>{
-              if (bookTitleRegex.test(this.bookname.trim())==false||this.bookname.trim()==''){
-                promptAction.showToast({message:'书名不正确'})
-                return
               }
-              //轻提示,一段时间后自动关闭
-              promptAction.showToast({
-                message:(JSON.parse(res.result as string) as ApifoxModel).message,
-                duration:3000
-              })
             })
-            router.back()
+              .then((res)=>{
+                promptAction.showToast({message:(JSON.parse(res.result as string) as ApifoxModel).message})
+                router.back()
+              })
           })
 
       }
       .padding(20)
     }
-    .title('新增图书')
+    .title('修改图书')
     .titleMode(NavigationTitleMode.Mini)
     .backButtonIcon($r('app.media.ic_public_arrow_left'))
   }

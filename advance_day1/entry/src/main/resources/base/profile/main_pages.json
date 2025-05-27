@@ -9,6 +9,7 @@
     "pages/Page_Post",
     "pages/BookStore/homePage",
     "pages/BookStore/addPage",
-    "pages/Page_Task_Commnet"
+    "pages/Page_Task_Commnet",
+    "pages/BookStore/EditPage"
   ]
 }
