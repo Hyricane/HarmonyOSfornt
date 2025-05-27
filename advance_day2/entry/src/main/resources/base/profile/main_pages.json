@@ -3,6 +3,7 @@
     "pages/Index",
     "pages/Page_Promise",
     "pages/Page_ChainToCallbackHell",
-    "pages/Page_AsyncAwait"
+    "pages/Page_AsyncAwait",
+    "pages/ChatPage"
   ]
 }
