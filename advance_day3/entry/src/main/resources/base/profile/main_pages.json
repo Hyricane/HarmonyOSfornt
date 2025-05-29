@@ -4,6 +4,8 @@
     "pages/Page_AsyncAwait_pro",
     "pages/Page_Demo_Area",
     "pages/Page_debounce",
-    "pages/Page_Promise_Static"
+    "pages/Page_Promise_Static",
+    "pages/Page_Demo_promiseSettle",
+    "pages/Page_Demo_Category"
   ]
 }
