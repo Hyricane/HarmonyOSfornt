@@ -59,7 +59,7 @@ struct ChatPage {
     Stack({ alignContent: Alignment.Bottom }) {
       Column() {
         Row() {
-          Text("🙉 知心姐姐")
+          Text("人工智障")
             .fontSize(18)
         }
         .width('100%')
@@ -107,7 +107,7 @@ struct ChatPage {
                   message:this.contentStr
                 })
                 chatReq.request('https://hmajax.itheima.net/api/robot?spoken='+encodeURIComponent(this.contentStr))
-                  .then(res=>{
+                .then(res=>{
                     const putResponds = (JSON.parse(res.result as string) as ApifoxModel).data
                     this.messList.push({
                       id:Date.now(),
@@ -143,7 +143,7 @@ struct MessageCom {
 
   build() {
     Row() {
-      Image(this.item.self ? $r('app.media.ic_public_male') : $r('app.media.ic_public_female'))
+      Image(this.item.self ? $r('app.media.startIcon') : $r('app.media.startIcon'))
         .height(40)
         .width(40)
         .borderRadius(6)
