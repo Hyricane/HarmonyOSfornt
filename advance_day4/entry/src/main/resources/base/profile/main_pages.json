@@ -1,0 +1,7 @@
+{
+  "src": [
+    "pages/Index",
+    "pages/Page_Demo_UserProfile",
+    "pages/Page_Demo_UserProfileEdit"
+  ]
+}
