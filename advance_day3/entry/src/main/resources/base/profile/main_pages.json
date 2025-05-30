@@ -6,6 +6,8 @@
     "pages/Page_debounce",
     "pages/Page_Promise_Static",
     "pages/Page_Demo_promiseSettle",
-    "pages/Page_Demo_Category"
+    "pages/Page_Demo_Category",
+    "pages/task/Page01_Book_Index",
+    "pages/task/Page02_Book_AddOrEdit"
   ]
 }
