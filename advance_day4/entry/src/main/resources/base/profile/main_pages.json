@@ -3,6 +3,8 @@
     "pages/Index",
     "pages/Page_Demo_UserProfile",
     "pages/Page_Demo_UserProfileEdit",
-    "pages/Page_axios"
+    "pages/Page_axios",
+    "pages/Page_FileUpload_review",
+    "pages/Page_FileUpload_review2"
   ]
 }

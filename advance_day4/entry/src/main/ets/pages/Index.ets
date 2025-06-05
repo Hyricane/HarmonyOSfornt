@@ -4,17 +4,17 @@ import { request } from '@kit.BasicServicesKit';
 import { http } from '@kit.NetworkKit';
 import { promptAction } from '@kit.ArkUI';
 
-interface HeaderType {
+export interface HeaderType {
   // 只需要用body
   body: string
 }
 
-interface BodyType {
+export interface BodyType {
   message: string
   data: Data
 }
 
-interface Data {
+export interface Data {
   url: string
 }
 

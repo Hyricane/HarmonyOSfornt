@@ -1,3 +1,5 @@
+import { window } from '@kit.ArkUI';
+
 @Entry
 @Component
 struct Index {
@@ -13,11 +15,14 @@ struct Index {
           center: { anchor: '__container__', align: VerticalAlign.Center },
           middle: { anchor: '__container__', align: HorizontalAlign.Center }
         })
-        .onClick(() => {
+        .onClick(async () => {
           this.message = 'Welcome';
+          const winobj =await window.getLastWindow(getContext())
+          winobj.setWindowLayoutFullScreen(true)
         })
     }
     .height('100%')
     .width('100%')
+    .backgroundColor(Color.Pink)
   }
 }
